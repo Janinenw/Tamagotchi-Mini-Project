@@ -21,15 +21,16 @@ function decreaseHungerBar() {
   }
 }
 
-
 sleepinessLevel = 100;
 sleepinessInterval = setInterval(decreaseSleepinessBar, 1000);
 
-function decreasesleepinessBar() {
- slepinessLevel -= 10;
- document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
- if (sleepinessLevel <= 0) {
-   clearInterval(sleepinessInterval);
- }
+function decreaseSleepinessBar() {
+sleepinessLevel -= 10;
+document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
+if (sleepinessLevel <= 0) {
+clearInterval(sleepinessInterval);
 }
+}
+
+
 
