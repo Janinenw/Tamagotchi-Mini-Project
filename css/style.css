@@ -1,3 +1,35 @@
-body {
-    background-color: purple;
-}
+#hunger-bar {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+  }
+  
+  #hunger-level {
+    width: 100%; /* start at full hunger */
+    height: 100%;
+    background-color: green;
+  }
+
+  #sleepiness-bar {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+  }
+  
+  #sleepiness-level {
+    width: 100%; /* start at full hunger */
+    height: 100%;
+    background-color: green;
+  }
+
+  #boredom-bar {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+  }
+  
+  #boredom-level {
+    width: 100%; /* start at full hunger */
+    height: 100%;
+    background-color: green;
+  }
