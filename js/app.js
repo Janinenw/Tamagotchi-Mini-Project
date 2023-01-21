@@ -33,4 +33,13 @@ clearInterval(sleepinessInterval);
 }
 
 
+boredomLevel = 100;
+boredomInterval = setInterval(decreaseBoredomBar, 1000);
 
+function decreaseBoredomBar() {
+boredomLevel -= 10;
+document.getElementById("boredom-level").style.width = boredomLevel + "%";
+if (boredomLevel <= 0) {
+clearInterval(boredomInterval);
+}
+}
