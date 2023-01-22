@@ -1,12 +1,14 @@
-// class Oop {
-//     constructor(name) {
-//       this.name = name
-//       this.hunger = 0
-//       this.sleepiness = 0
-//       this.boredom = 0;
-//       this.age = 
-//     }
-// }
+class Tamagotchi {
+    constructor(name) {
+    this.name = name;
+    this.hunger = 0;
+    this.sleepiness = 0;
+    this.boredom = 0;
+    this.age = 0;
+    }
+    }
+    
+
 document.getElementById("instructions-button").addEventListener("click", function() {
     alert("instructions here")
 });
