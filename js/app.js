@@ -7,44 +7,101 @@ class Tamagotchi {
     this.age = 0;
     }
     }
-    
+
 
 document.getElementById("instructions-button").addEventListener("click", function() {
     alert("instructions here")
+
+
+// this makes bars run at correct interval, but need to add event
+//listener with anonymous function so these buttons only run when start is clicked
+
+//  hungerLevel = 100;
+//  hungerInterval = setInterval(decreaseHungerBar, 5000);
+
+// function decreaseHungerBar() {
+//   hungerLevel -= 10;
+//   document.getElementById("hunger-level").style.width = hungerLevel + "%";
+//   if (hungerLevel <= 0) {
+//     clearInterval(hungerInterval)
+//   }
+// }
+
+// sleepinessLevel = 100;
+// sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
+
+// function decreaseSleepinessBar() {
+// sleepinessLevel -= 10;
+// document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
+// if (sleepinessLevel <= 0) {
+// clearInterval(sleepinessInterval);
+// }
+// }
+
+
+// boredomLevel = 100;
+// boredomInterval = setInterval(decreaseBoredomBar, 5000);
+
+// function decreaseBoredomBar() {
+// boredomLevel -= 10;
+// document.getElementById("boredom-level").style.width = boredomLevel + "%";
+// if (boredomLevel <= 0) {
+// clearInterval(boredomInterval);
+// }
+// }
+
 });
+let hungerLevel = 100;
+let hungerInterval;
+let sleepinessLevel = 100;
+let sleepinessInterval;
+let boredomLevel = 100;
+let boredomInterval;
 
-
- hungerLevel = 100;
- hungerInterval = setInterval(decreaseHungerBar, 5000);
+document.getElementById("start-button").addEventListener("click", function() {
+  if(hungerInterval === undefined) {
+    hungerInterval = setInterval(decreaseHungerBar, 5000);
+  } else {
+    clearInterval(hungerInterval);
+    hungerInterval = undefined;
+  }
+  if(sleepinessInterval === undefined) {
+    sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
+  } else {
+    clearInterval(sleepinessInterval);
+    sleepinessInterval = undefined;
+  }
+  if(boredomInterval === undefined) {
+    boredomInterval = setInterval(decreaseBoredomBar, 5000);
+  } else {
+    clearInterval(boredomInterval);
+    boredomInterval = undefined;
+  }
+});
 
 function decreaseHungerBar() {
   hungerLevel -= 10;
   document.getElementById("hunger-level").style.width = hungerLevel + "%";
   if (hungerLevel <= 0) {
-    clearInterval(hungerInterval)
+    clearInterval(hungerInterval);
+    hungerInterval = undefined;
   }
 }
 
-sleepinessLevel = 100;
-sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
-
 function decreaseSleepinessBar() {
-sleepinessLevel -= 10;
-document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
-if (sleepinessLevel <= 0) {
-clearInterval(sleepinessInterval);
+  sleepinessLevel -= 10;
+  document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
+  if (sleepinessLevel <= 0) {
+    clearInterval(sleepinessInterval);
+    sleepinessInterval = undefined;
+  }
 }
-}
-
-
-boredomLevel = 100;
-boredomInterval = setInterval(decreaseBoredomBar, 5000);
 
 function decreaseBoredomBar() {
-boredomLevel -= 10;
-document.getElementById("boredom-level").style.width = boredomLevel + "%";
-if (boredomLevel <= 0) {
-clearInterval(boredomInterval);
+  boredomLevel -= 10;
+  document.getElementById("boredom-level").style.width = boredomLevel + "%";
+  if (boredomLevel <= 0) {
+    clearInterval(boredomInterval);
+    boredomInterval = undefined;
+  }
 }
-}
-
