@@ -1,35 +1,35 @@
 #hunger-bar {
     width: 200px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid purple;
   }
   
   #hunger-level {
-    width: 100%; /* start at full hunger */
+    width: 100%; 
     height: 100%;
-    background-color: green;
+    background-color: purple;
   }
 
   #sleepiness-bar {
     width: 200px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid purple;
   }
   
   #sleepiness-level {
-    width: 100%; /* start at full hunger */
+    width: 100%; 
     height: 100%;
-    background-color: green;
+    background-color: purple;
   }
 
   #boredom-bar {
     width: 200px;
     height: 20px;
-    border: 1px solid black;
+    border: 1px solid purple;
   }
   
   #boredom-level {
-    width: 100%; /* start at full hunger */
+    width: 100%; 
     height: 100%;
-    background-color: green;
+    background-color: purple;
   }

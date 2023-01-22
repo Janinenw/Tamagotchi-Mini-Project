@@ -7,11 +7,13 @@
 //       this.age = 
 //     }
 // }
-
+document.getElementById("instructions-button").addEventListener("click", function() {
+    alert("instructions here")
+});
 
 
  hungerLevel = 100;
- hungerInterval = setInterval(decreaseHungerBar, 1000);
+ hungerInterval = setInterval(decreaseHungerBar, 5000);
 
 function decreaseHungerBar() {
   hungerLevel -= 10;
@@ -22,7 +24,7 @@ function decreaseHungerBar() {
 }
 
 sleepinessLevel = 100;
-sleepinessInterval = setInterval(decreaseSleepinessBar, 1000);
+sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
 
 function decreaseSleepinessBar() {
 sleepinessLevel -= 10;
@@ -34,7 +36,7 @@ clearInterval(sleepinessInterval);
 
 
 boredomLevel = 100;
-boredomInterval = setInterval(decreaseBoredomBar, 1000);
+boredomInterval = setInterval(decreaseBoredomBar, 5000);
 
 function decreaseBoredomBar() {
 boredomLevel -= 10;
@@ -43,3 +45,4 @@ if (boredomLevel <= 0) {
 clearInterval(boredomInterval);
 }
 }
+
