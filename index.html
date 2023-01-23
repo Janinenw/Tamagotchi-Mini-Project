@@ -9,23 +9,20 @@
 </head>
 <body>
     <h1>Text here</h1>
-    <div id="hunger-bar">
-    <div id="hunger-level"></div>
+    <div id="hunger-bar" class="hidden">
+        <div id="hunger-level"></div>
     </div>
-    
-    <div id="sleepiness-bar">
-    <div id="sleepiness-level"></div>
+    <div id="sleepiness-bar" class="hidden">
+        <div id="sleepiness-level"></div>
     </div>
-    
-    <div id="boredom-bar">
-    <div id="boredom-level"></div>
+        <div id="boredom-bar" class="hidden">
+        <div id="boredom-level"></div>
     </div>
-
-    <form>
+    <form id="name-form" style="display: none;">
         <label>Enter Tamagotchi name:</label>
         <input type="text" id="name-input">
         <button type="button" onclick="createTamagotchi()">Create Tamagotchi</button>
-    </form>
+      </form>
 
       <button id="instructions-button">Instructions</button>
       <button id="start-button">Start</button>
