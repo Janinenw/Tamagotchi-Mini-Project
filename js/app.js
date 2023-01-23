@@ -1,3 +1,4 @@
+
 let tamagotchi;
 let hungerLevel = 100;
 let sleepinessLevel = 100;
@@ -12,7 +13,9 @@ class Tamagotchi {
         this.age = 0;
     }
 }
-
+document.getElementById("instructions-button").addEventListener("click", function() {
+   alert("instructions, but don't forget to actually type them")
+})
 document.getElementById("start-button").addEventListener("click", function() {
     document.getElementById("name-form").style.display = "block";
 });
@@ -24,7 +27,8 @@ function createTamagotchi() {
     document.getElementById("hunger-bar").classList.remove("hidden");
     document.getElementById("sleepiness-bar").classList.remove("hidden");
     document.getElementById("boredom-bar").classList.remove("hidden");
-
+    document.getElementById("action-buttons").style.display = "block"; 
+    document.getElementById("name-form").style.display = "none"; 
     let hungerInterval = setInterval(decreaseHungerBar, 5000);
     let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
     let boredomInterval = setInterval(decreaseBoredomBar, 5000);
