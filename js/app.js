@@ -16,23 +16,29 @@ class Tamagotchi {
 document.getElementById("instructions-button").addEventListener("click", function() {
    alert("instructions, but don't forget to actually type them")
 })
-document.getElementById("start-button").addEventListener("click", function() {
-    document.getElementById("name-form").style.display = "block";
-});
 
-function createTamagotchi() {
-    let name = document.getElementById("name-input").value;
-    tamagotchi = new Tamagotchi(name);
-    console.log(tamagotchi);  
-    document.getElementById("hunger-bar").classList.remove("hidden");
-    document.getElementById("sleepiness-bar").classList.remove("hidden");
-    document.getElementById("boredom-bar").classList.remove("hidden");
-    document.getElementById("action-buttons").style.display = "block"; 
-    document.getElementById("name-form").style.display = "none"; 
-    let hungerInterval = setInterval(decreaseHungerBar, 5000);
-    let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
-    let boredomInterval = setInterval(decreaseBoredomBar, 5000);
-}
+document.getElementById("start-button").addEventListener("click", function() {
+    document.getElementById("start-button").style.display = "none";
+    document.getElementById("name-form").style.display = "block";
+    });
+
+    function createTamagotchi() {
+        let name = document.getElementById("name-input").value;
+        tamagotchi = new Tamagotchi(name);
+        console.log(tamagotchi);  
+        document.getElementById("hunger-bar").classList.remove("hidden");
+        document.getElementById("sleepiness-bar").classList.remove("hidden");
+        document.getElementById("boredom-bar").classList.remove("hidden");
+        document.getElementById("action-buttons").style.display = "block"; 
+        document.getElementById("name-form").style.display = "none"; 
+        document.getElementById("feed-button").innerHTML = "Feed " + tamagotchi.name;
+        document.getElementById("sleep-button").innerHTML = "Put " + tamagotchi.name + " down for a nap"
+        document.getElementById("play-button").innerHTML = "Entertain " + tamagotchi.name;
+        let hungerInterval = setInterval(decreaseHungerBar, 5000);
+        let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
+        let boredomInterval = setInterval(decreaseBoredomBar, 5000);
+    }
+    
 
 function decreaseHungerBar() {
     hungerLevel -= 10;
@@ -60,3 +66,4 @@ function decreaseBoredomBar() {
     boredomInterval = undefined;
     }
 }
+
