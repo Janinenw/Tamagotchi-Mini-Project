@@ -67,3 +67,48 @@ function decreaseBoredomBar() {
     }
 }
 
+function increaseHungerBar() {
+    hungerLevel += 10;
+    document.getElementById("hunger-level").style.width = hungerLevel + "%";
+    if (hungerLevel >= 100) {
+    clearInterval(hungerInterval);
+    hungerInterval = undefined;
+    }
+}
+
+function increaseSleepinessBar() {
+    if(sleepinessLevel < 100) {
+        sleepinessLevel += 10;
+        document.getElementById("sleepiness-level").style.width = sleepinessLevel + "%";
+        if (sleepinessLevel >= 100) {
+        clearInterval(sleepinessInterval);
+        sleepinessInterval = undefined;
+        }
+    } else {
+        alert(" It is physically impossible to be more well rested than" +  tamagotchi.name + ". They're probably hungry, though");
+    }
+}
+
+
+function increaseBoredomBar() {
+    if(boredomLevel < 100) {
+        boredomLevel += 10;
+        document.getElementById("boredom-level").style.width = boredomLevel + "%";
+        if (boredomLevel >= 100) {
+        clearInterval(boredomInterval);
+        boredomInterval = undefined;
+        }
+    } else {
+        alert(" Nothing is more fun than this! Maybe put" +  tamagotchi.name + "down for a nap.");
+    }
+}
+// proper syntax for starting with tomagotchi.name within alert?  
+document.getElementById("feed-button").addEventListener("click", function() {
+    increaseHungerBar();
+ });
+ document.getElementById("sleep-button").addEventListener("click", function() {
+    increaseSleepinessBar();
+ });
+ document.getElementById("play-button").addEventListener("click", function() {
+    increaseBoredomBar();
+ });
