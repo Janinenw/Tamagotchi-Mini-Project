@@ -30,12 +30,17 @@ function createTamagotchi() {
     document.getElementById("feed-button").innerHTML = "Feed " + tamagotchi.name;
     document.getElementById("sleep-button").innerHTML = "Put " + tamagotchi.name + " down for a nap"
     document.getElementById("play-button").innerHTML = "Entertain " + tamagotchi.name;
-
-
+    
+    function increaseAge() {
+        tamagotchi.age++;
+    }
+    
+let ageInterval = setInterval(increaseAge, 1000)
 let hungerInterval = setInterval(decreaseHungerBar, 5000);
 let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
 let boredomInterval = setInterval(decreaseBoredomBar, 5000);
 }
+
 
 function decreaseHungerBar() {
   if(tamagotchi.hunger > 0) {
@@ -96,6 +101,8 @@ function increaseBoredomBar() {
     createTamagotchi()
     });
     
+
+   
 document.getElementById("feed-button").addEventListener("click", increaseHungerBar)
 
 document.getElementById("sleep-button").addEventListener("click", increaseSleepinessBar)
