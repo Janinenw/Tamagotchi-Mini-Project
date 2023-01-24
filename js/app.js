@@ -1,5 +1,5 @@
 
-let tamagotchi;
+// let tamagotchi;
 let hungerLevel = 100;
 let sleepinessLevel = 100;
 let boredomLevel = 100;
@@ -68,13 +68,18 @@ function decreaseBoredomBar() {
 }
 
 function increaseHungerBar() {
-    hungerLevel += 10;
-    document.getElementById("hunger-level").style.width = hungerLevel + "%";
-    if (hungerLevel >= 100) {
-    clearInterval(hungerInterval);
-    hungerInterval = undefined;
+    if(hungerLevel < 100) {
+        hungerLevel += 10;
+        document.getElementById("hunger-level").style.width = hungerLevel + "%";
+        if (hungerLevel >= 100) {
+        clearInterval(hungerInterval);
+        hungerInterval = undefined;
+        }
+    } else {
+
     }
 }
+
 
 function increaseSleepinessBar() {
     if(sleepinessLevel < 100) {
@@ -85,7 +90,7 @@ function increaseSleepinessBar() {
         sleepinessInterval = undefined;
         }
     } else {
-        alert(" It is physically impossible to be more well rested than" +  tamagotchi.name + ". They're probably hungry, though");
+
     }
 }
 
@@ -99,7 +104,7 @@ function increaseBoredomBar() {
         boredomInterval = undefined;
         }
     } else {
-        alert(" Nothing is more fun than this! Maybe put" +  tamagotchi.name + "down for a nap.");
+    
     }
 }
 // proper syntax for starting with tomagotchi.name within alert?  
