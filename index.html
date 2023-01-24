@@ -1,40 +1,31 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamagotchi Game</title>
     <link href="./css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1>Something somethhing</h1>
+    <div id="start-button" onclick="showNameForm()">Start</div>
+    <div id="name-form" class="hidden">
+        <input type="text" id="name-input" placeholder="Enter Tamagotchi's name">
+        <button id="create-button" onclick="createTamagotchi()">Create</button>
+    </div>
     <div id="hunger-bar" class="hidden">
         <div id="hunger-level"></div>
     </div>
     <div id="sleepiness-bar" class="hidden">
+        
         <div id="sleepiness-level"></div>
     </div>
-        <div id="boredom-bar" class="hidden">
+    <div id="boredom-bar" class="hidden">
         <div id="boredom-level"></div>
     </div>
-    <form id="name-form" style="display: none;">
-        <label>Enter Tamagotchi name:</label>
-        <input type="text" id="name-input">
-        <button type="button" onclick="createTamagotchi()">Create Tamagotchi</button>
-      </form>
-
-      <button id="instructions-button">Instructions</button>
-      <button id="start-button">Start</button>
-     
-    <div id="action-buttons" style="display: none;">
-        <button id="feed-button" onclick="increaseHungerBar()">Feed</button>
-        <button id="sleep-button" onclick="increaseSleepinessBar()">Sleep</button>
-        <button id="play-button" onclick="increaseBoredomBar()">Play</button>
+    <div id="action-buttons" class="hidden">
+        <button id="feed-button" onclick="increaseHungerBar()"></button>
+        <button id="sleep-button" onclick="increaseSleepinessBar()"></button>
+        <button id="play-button" onclick="increaseBoredomBar()"></button>
     </div>
-
     <script src="./js/app.js"></script>
+
 </body>
 </html>

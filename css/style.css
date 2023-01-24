@@ -1,45 +1,54 @@
+#start-button {
+    width: 100px;
+    height: 50px;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+#name-form {
+    width: 200px;
+    margin: 0 auto;
+}
+
+#name-form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#hunger-bar, #sleepiness-bar, #boredom-bar {
+    width: 200px;
+    height: 20px;
+    margin: 0 auto;
+    background-color: purple;
+    position: relative;
+}
+
+#hunger-level, #sleepiness-level, #boredom-level {
+    width: 0;
+    height: 100%;
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 #action-buttons {
-    display: none;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#action-buttons button {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
 }
 
 .hidden {
     display: none;
-    }
-
-#hunger-bar {
-    width: 200px;
-    height: 20px;
-    border: 1px solid purple;
-  }
-  
-  #hunger-level {
-    width: 100%; 
-    height: 100%;
-    background-color: purple;
-  }
-
-  #sleepiness-bar {
-    width: 200px;
-    height: 20px;
-    border: 1px solid purple;
-  }
-  
-  #sleepiness-level {
-    width: 100%; 
-    height: 100%;
-    background-color: purple;
-  }
-
-  #boredom-bar {
-    width: 200px;
-    height: 20px;
-    border: 1px solid purple;
-  }
-  
-  #boredom-level {
-    width: 100%; 
-    height: 100%;
-    background-color: purple;
-  }
-
+}
