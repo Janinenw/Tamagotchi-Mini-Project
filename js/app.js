@@ -1,4 +1,8 @@
 
+function showInstructions() {
+    alert("Congratulations! This cute lil baby plant is all yours!  Presss the buttons to feed it, entertain it, and give it lots of rest.");
+}
+
 class Tamagotchi {
     constructor(name) {
         this.name = name;
@@ -39,9 +43,15 @@ function createTamagotchi() {
 
 let ageInterval = setInterval(increaseAge, 10000)
 function increaseAge() {
-  tamagotchi.age++;
-  displayAge();
+    if (tamagotchi.hunger <= 0 || tamagotchi.sleepiness <= 0 || tamagotchi.boredom <= 0) {
+        clearInterval(ageInterval);
+    } else {
+        tamagotchi.age++;
+        displayAge();
+    }
 }
+
+
     function displayAge() {
         let age = tamagotchi.age;
         if (age === 1) {
