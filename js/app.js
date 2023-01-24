@@ -67,7 +67,7 @@ function increaseAge() {
   let boredomInterval = setInterval(decreaseBoredomBar, 2000);
   
   function decreaseHungerBar() {
-    if(tamagotchi.hunger > 0) {
+    if(tamagotchi.hunger > 0 && tamagotchi.boredom > 0 && tamagotchi.sleepiness > 0) {
     tamagotchi.hunger -= 10;
     document.getElementById("hunger-level").style.width = tamagotchi.hunger + "%";
   } else {
@@ -89,7 +89,7 @@ function increaseAge() {
   }
   
   function decreaseBoredomBar() {
-    if(tamagotchi.boredom > 0) {
+    if(tamagotchi.boredom > 0 && tamagotchi.sleepiness > 0 && tamagotchi.hunger > 0 ) {
     tamagotchi.boredom -= 10;
     document.getElementById("boredom-level").style.width = tamagotchi.boredom + "%"
   } else {
