@@ -31,11 +31,25 @@ function createTamagotchi() {
     document.getElementById("sleep-button").innerHTML = "Put " + tamagotchi.name + " down for a nap"
     document.getElementById("play-button").innerHTML = "Entertain " + tamagotchi.name;
     
-    function increaseAge() {
-        tamagotchi.age++;
-    }
+    displayAge();
+}
+
+let ageInterval = setInterval(increaseAge, 10000)
+function increaseAge() {
+  tamagotchi.age++;
+  displayAge();
+}
+    function displayAge() {
+        let age = tamagotchi.age;
+        if (age === 1) {
+          document.getElementById("age-display").innerHTML = tamagotchi.name + " is " + age + " year old";
+        } else {
+          document.getElementById("age-display").innerHTML = tamagotchi.name + " is " + age + " years old";
+        }
+      
     
-let ageInterval = setInterval(increaseAge, 1000)
+    
+
 let hungerInterval = setInterval(decreaseHungerBar, 5000);
 let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
 let boredomInterval = setInterval(decreaseBoredomBar, 5000);
