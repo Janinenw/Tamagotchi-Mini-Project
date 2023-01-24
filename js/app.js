@@ -15,6 +15,7 @@ class Tamagotchi {
 
 function showNameForm() {
     document.getElementById("start-button").style.display = "none";
+    document.getElementById("instruction-button").style.display ="none"
     document.getElementById("name-form").style.display = "block";
 }
 
@@ -41,10 +42,10 @@ function createTamagotchi() {
     document.getElementById("sleep-button").addEventListener("click", restoreSleep);
 }
 
-let ageInterval = setInterval(increaseAge, 10000)
+let ageInterval = setInterval(increaseAge, 1000)
 function increaseAge() {
     if (tamagotchi.hunger <= 0 || tamagotchi.sleepiness <= 0 || tamagotchi.boredom <= 0) {
-        clearInterval(ageInterval);
+        clearInterval(ageInterval)
     } else {
         tamagotchi.age++;
         displayAge();
@@ -61,26 +62,28 @@ function increaseAge() {
           }
       }
   
-  let hungerInterval = setInterval(decreaseHungerBar, 5000);
-  let sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
-  let boredomInterval = setInterval(decreaseBoredomBar, 5000);
+  let hungerInterval = setInterval(decreaseHungerBar, 2000);
+  let sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
+  let boredomInterval = setInterval(decreaseBoredomBar, 2000);
   
   function decreaseHungerBar() {
     if(tamagotchi.hunger > 0) {
     tamagotchi.hunger -= 10;
     document.getElementById("hunger-level").style.width = tamagotchi.hunger + "%";
   } else {
+    alert("dead")
     clearInterval(hungerInterval);
-    hungerInterval = undefined;
+    // hungerInterval = undefined;
   }
   }
  
 
   function decreaseSleepinessBar() {
-      if(tamagotchi.sleepiness > 0) {
+      if(tamagotchi.sleepiness > 0 && tamagotchi.boredom > 0 && tamagotchi.hunger > 0 ) {
           tamagotchi.sleepiness -= 10;
           document.getElementById("sleepiness-level").style.width = tamagotchi.sleepiness + "%";
       } else {
+        alert("dead")
           clearInterval(sleepinessInterval);
       }
   }
@@ -90,9 +93,9 @@ function increaseAge() {
     tamagotchi.boredom -= 10;
     document.getElementById("boredom-level").style.width = tamagotchi.boredom + "%"
   } else {
+    alert("dead")
     clearInterval(boredomInterval);
-    boredomInterval
-    boredomInterval = undefined;
+    // boredomInterval = undefined;
 }
 }
 
@@ -130,7 +133,7 @@ function increaseBoredomBar() {
         document.getElementById("play-button").disabled = true;
         document.getElementById("sleep-button").disabled = true;
         clearInterval(sleepinessInterval);
-        sleepinessInterval = setInterval(decreaseSleepinessBar, 5000);
+        sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
         }
         
 
