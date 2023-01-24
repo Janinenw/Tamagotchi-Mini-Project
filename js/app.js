@@ -78,9 +78,10 @@ document.getElementById("hunger-level").style.width = tamagotchi.hunger + "%"
 function increaseSleepinessBar() {
     if(tamagotchi.sleepiness < 100) {
     tamagotchi.sleepiness += 10;
-    document.getElementById("sleepiness-level").style.width = tamagotchi.boredom + "%";
+    document.getElementById("sleepiness-level").style.width = tamagotchi.sleepiness + "%";
     }
     }
+
 function increaseBoredomBar() {
     if(tamagotchi.boredom < 100) {
     tamagotchi.boredom += 10;
