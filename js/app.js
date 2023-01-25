@@ -1,6 +1,6 @@
 
 function showInstructions() {
-    alert("Congratulations! This cute lil baby plant is all yours!  Presss the buttons to feed it, entertain it, and give it lots of rest.");
+    alert("Congratulations.  Someone tama gotcha a cute lil surprise!  Make sure you keep it fed, well rested and entertained.  Oh and btw, it only eats blood. ");
 }
 
 class Tamagotchi {
@@ -68,14 +68,13 @@ function increaseAge() {
   
   function decreaseHungerBar() {
     if(tamagotchi.hunger > 0 && tamagotchi.boredom > 0 && tamagotchi.sleepiness > 0) {
-    tamagotchi.hunger -= 10;
-    document.getElementById("hunger-level").style.width = tamagotchi.hunger + "%";
-  } else {
-    alert("dead")
-    clearInterval(hungerInterval);
-    // hungerInterval = undefined;
-  }
-  }
+        tamagotchi.hunger -= 10;
+        document.getElementById("hunger-level").style.width = tamagotchi.hunger + "%";
+    } else {
+        endGame();
+    }
+}
+  
  
 
   function decreaseSleepinessBar() {
@@ -83,8 +82,7 @@ function increaseAge() {
           tamagotchi.sleepiness -= 10;
           document.getElementById("sleepiness-level").style.width = tamagotchi.sleepiness + "%";
       } else {
-        alert("dead")
-          clearInterval(sleepinessInterval);
+          endGame()
       }
   }
   
@@ -93,9 +91,7 @@ function increaseAge() {
     tamagotchi.boredom -= 10;
     document.getElementById("boredom-level").style.width = tamagotchi.boredom + "%"
   } else {
-    alert("dead")
-    clearInterval(boredomInterval);
-    // boredomInterval = undefined;
+   endGame()
 }
 }
 
@@ -136,4 +132,17 @@ function increaseBoredomBar() {
         sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
         }
         
-
+     function endGame() {
+        clearInterval(hungerInterval);
+        clearInterval(sleepinessInterval);
+        clearInterval(boredomInterval);
+        clearInterval(ageInterval);
+        document.getElementById("hunger-bar").classList.add("hidden");
+        document.getElementById("sleepiness-bar").classList.add("hidden");
+        document.getElementById("boredom-bar").classList.add("hidden");
+        document.getElementById("action-buttons").style.display = "none";
+        document.getElementById("start-button").style.display = "block";
+        document.getElementById("instruction-button").style.display = "block";
+        tamagotchi = null;
+            alert("Your Tamagotchi has passed away.");
+        }
