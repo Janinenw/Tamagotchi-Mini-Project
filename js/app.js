@@ -62,13 +62,46 @@ function increaseAge() {
             document.getElementById("age-display").innerHTML = tamagotchi.name + " is " + age + " years old";
           }
       }
-  
+
+      
+ 
       let ageCheckInterval = setInterval(checkAge, 1000);
+
       function checkAge() {
-        if (tamagotchi.age === 3) {
-            alert(tamagotchi.name + " has turned 3! Look at how adorable they've gotten");
-        }
-    }
+          if (tamagotchi.age === 3) {
+              alert("My how time flies! " + tamagotchi.name + " is growing so quickly!");
+              changeImage();
+          } else if (tamagotchi.age === 20) {
+              alert("Remember the good old days when " + tamagotchi.name + " drank blood straight from the bottle? They grow up so fast");
+              changeImageTwo();
+          } else if (tamagotchi.age === 30) {
+              alert("Congratulations! You won the game! And also created a monster");
+              changeImageThree();
+          }
+      }
+      
+      function changeImage() {
+          if (tamagotchi.age === 3) {
+              document.getElementById("tamagotchi-image").style.display = "none";
+              document.getElementById("tamagotchi-image-two").style.display = "block";
+          }
+      }
+      
+      function changeImageTwo() {
+          if (tamagotchi.age === 20) {
+              document.getElementById("tamagotchi-image-two").style.display = "none";
+              document.getElementById("tamagotchi-image-three").style.display = "block";
+          }
+      }
+      
+      function changeImageThree() {
+          if (tamagotchi.age === 30) {
+              document.getElementById("tamagotchi-image-three").style.display = "none";
+              document.getElementById("tamagotchi-image-four").style.display = "block";
+          }
+      }
+      
+
   let hungerInterval = setInterval(decreaseHungerBar, 2000);
   let sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
   let boredomInterval = setInterval(decreaseBoredomBar, 2000);

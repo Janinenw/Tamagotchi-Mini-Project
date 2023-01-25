@@ -82,3 +82,19 @@ img#tamagotchi-image {
     animation: bounce 1s infinite;
     }
 
+img#tamagotchi-image-two {
+        width: 200px; 
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        animation: bounce 1s infinite;
+        }
+    
+img#tamagotchi-image-three {
+         width: 200px; 
+         height: auto;
+         margin: 0 auto;
+         display: block;
+         animation: bounce 1s infinite;
+            }
+        
