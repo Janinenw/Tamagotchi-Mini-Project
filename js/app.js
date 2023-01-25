@@ -17,6 +17,8 @@ function showNameForm() {
     document.getElementById("start-button").style.display = "none";
     document.getElementById("instruction-button").style.display ="none"
     document.getElementById("name-form").style.display = "block";
+
+
 }
 
 function createTamagotchi() {
@@ -24,7 +26,6 @@ function createTamagotchi() {
     tamagotchi = new Tamagotchi(name);
     console.log(tamagotchi);  
     document.getElementById("hunger-bar").classList.remove("hidden");
-
     document.getElementById("hunger-level").style.width = "100%";
     document.getElementById("sleepiness-bar").classList.remove("hidden");
     document.getElementById("sleepiness-level").style.width = "100%";
@@ -36,7 +37,7 @@ function createTamagotchi() {
     document.getElementById("sleep-button").innerHTML = "Put " + tamagotchi.name + " down for a nap"
     document.getElementById("sleep-button").addEventListener("click", restoreSleep);
     document.getElementById("play-button").innerHTML = "Entertain " + tamagotchi.name;
-    
+    document.getElementById("tamagotchi-image").style.display ="block"
     displayAge();
     
     document.getElementById("sleep-button").addEventListener("click", restoreSleep);
@@ -129,7 +130,12 @@ function increaseBoredomBar() {
         document.getElementById("play-button").disabled = true;
         document.getElementById("sleep-button").disabled = true;
         clearInterval(sleepinessInterval);
-        sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
+        sleepinessInterval = setInterval(decreaseSleepinessBar, 2000); {
+            document.body.style.filter = "brightness(0.5)";
+            setTimeout(function(){
+                document.body.style.filter = "brightness(1)";
+            }, 5000);
+        }
         }
         
      function endGame() {
@@ -149,4 +155,4 @@ function increaseBoredomBar() {
         }
 
 
-        Adding for test commmit to new name 
+    
