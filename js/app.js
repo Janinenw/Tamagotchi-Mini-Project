@@ -75,8 +75,8 @@ function increaseAge() {
               alert("Remember the good old days when " + tamagotchi.name + " drank blood straight from the bottle? They grow up so fast");
               changeImageTwo();
           } else if (tamagotchi.age === 30) {
-              alert("Congratulations! You won the game! And also created a monster");
-              changeImageThree();
+              winGame()
+              
           }
       }
       
@@ -93,14 +93,19 @@ function increaseAge() {
               document.getElementById("tamagotchi-image-three").style.display = "block";
           }
       }
-      
-      function changeImageThree() {
-          if (tamagotchi.age === 30) {
+     let hasWon = false;
+      function winGame() {
+          if (!hasWon && tamagotchi.age === 30) {
+              alert("You inadvertently created a monster, but it's okay because you won the game!");
+              hasWon = true;
+              clearInterval(hungerInterval);
+              clearInterval(sleepinessInterval);
+              clearInterval(boredomInterval);
+              clearInterval(ageInterval);
               document.getElementById("tamagotchi-image-three").style.display = "none";
               document.getElementById("tamagotchi-image-four").style.display = "block";
           }
       }
-      
 
   let hungerInterval = setInterval(decreaseHungerBar, 2000);
   let sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
