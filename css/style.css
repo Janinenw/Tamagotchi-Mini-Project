@@ -67,3 +67,18 @@
 .hidden {
     display: none;
 }
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+img#tamagotchi-image {
+    width: 200px; 
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    animation: bounce 1s infinite;
+    }
+
