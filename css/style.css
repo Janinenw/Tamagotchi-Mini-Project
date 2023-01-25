@@ -4,7 +4,7 @@ body {
 }
 h1 {
     font-size: 80px;
-    font-family: 'Creepster', cursive;
+    font-family: 'Creepster';
     color: red;
     margin: 0px;
     text-align: center;
@@ -13,11 +13,12 @@ h1 {
 
 
 #start-button, #instruction-button {
+    font-family: 'Creepster';
     width: 100px;
     height: 50px;
     background-color: purple;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     line-height: 50px;
     margin: 0 auto;
@@ -83,6 +84,7 @@ h1 {
 
 #feed-button, #sleep-button, #play-button {
     color: white;
+    font-family: 'Creepster';
 }
 
 #feed-button {
@@ -168,4 +170,21 @@ h1 {
         width: 100vw;
         height: 100vh; 
         z-index: 999;
+        }
+
+#age-display {
+            box-sizing: border-box;
+            padding: 5px;
+            box-decoration-break: clone;
+            border-width: 2px;
+            border-style: solid;
+            border-color: red;
+            text-align: center;
+            color: white;
+            font-family: 'Creepster'
+        }
+
+
+        #name-form, #name-form input, #create-button {
+            font-family: 'Creepster', cursive;
         }
