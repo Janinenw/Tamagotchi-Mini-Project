@@ -183,6 +183,7 @@ function increaseBoredomBar() {
         }
         
      function endGame() {
+        let hasWon = true 
         clearInterval(hungerInterval);
         clearInterval(sleepinessInterval);
         clearInterval(boredomInterval);
@@ -198,3 +199,4 @@ function increaseBoredomBar() {
             alert("Your Tamagotchi has passed away.");
             document.getElementById("dead").style.display = "block";
         }
+    
