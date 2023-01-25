@@ -1,17 +1,18 @@
 
-
-
-#start-button {
-    width: 100px;
-    height: 50px;
-    background-color: purple;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 50px;
-    margin: 0 auto;
+body {
+    background-color: lightgreen;
 }
-#instruction-button {
+h1 {
+    font-size: 80px;
+    font-family: 'Creepster', cursive;
+    color: red;
+    margin: 0px;
+    text-align: center;
+}
+
+
+
+#start-button, #instruction-button {
     width: 100px;
     height: 50px;
     background-color: purple;
@@ -20,11 +21,23 @@
     text-align: center;
     line-height: 50px;
     margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px; 
     }
     
+  #hunger-bar, #sleepiness-bar, #boredom-bar {
+        width: 200px;
+        height: 20px;
+        margin: 0 auto;
+        background-color: purple;
+        position: relative;
+        margin-bottom: 10px; 
+    }
     
 
-#name-form {
+ #name-form {
     width: 200px;
     margin: 0 auto;
 }
@@ -33,36 +46,75 @@
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
+} 
+
+
+
+
+#hunger-level {
+    width: 0;
+    height: 100%;
+    background-color: red; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px; 
 }
 
-#hunger-bar, #sleepiness-bar, #boredom-bar {
-    width: 200px;
-    height: 20px;
-    margin: 0 auto;
-    background-color: purple;
-    position: relative;
+#sleepiness-level {
+    width: 0;
+    height: 100%;
+    background-color: blue; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px; 
 }
 
-#hunger-level, #sleepiness-level, #boredom-level {
+#boredom-level {
     width: 0;
     height: 100%;
     background-color: green;
     position: absolute;
     top: 0;
     left: 0;
+    margin-bottom: 20px; 
 }
+
+#feed-button, #sleep-button, #play-button {
+    color: white;
+}
+
+#feed-button {
+    width: 150px;
+    height: 50px;
+    background-color: red; 
+    margin-bottom: 10px;
+}
+
+#sleep-button {
+    width: 150px;
+    height: 50px;
+    background-color: blue; 
+    margin-bottom: 10px;
+}
+
+#play-button {
+    width: 150px;
+    height: 50px;
+    background-color: green; 
+    margin-bottom: 10px;
+}
+
 
 #action-buttons {
     width: 200px;
     margin: 0 auto;
     text-align: center;
+    
 }
 
-#action-buttons button {
-    width: 150px;
-    height: 30px;
-    margin-bottom: 10px;
-}
+
 
 .hidden {
     display: none;
@@ -81,6 +133,7 @@
     display: block;
     animation: bounce 1s infinite;
     }
+
 
 #tamagotchi-image-two {
         width: 200px; 
