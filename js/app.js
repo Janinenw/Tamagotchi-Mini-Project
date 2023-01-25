@@ -63,6 +63,12 @@ function increaseAge() {
           }
       }
   
+      let ageCheckInterval = setInterval(checkAge, 1000);
+      function checkAge() {
+        if (tamagotchi.age === 3) {
+            alert(tamagotchi.name + " has turned 3! Look at how adorable they've gotten");
+        }
+    }
   let hungerInterval = setInterval(decreaseHungerBar, 2000);
   let sleepinessInterval = setInterval(decreaseSleepinessBar, 2000);
   let boredomInterval = setInterval(decreaseBoredomBar, 2000);
@@ -154,5 +160,3 @@ function increaseBoredomBar() {
             alert("Your Tamagotchi has passed away.");
         }
 
-
-    
