@@ -186,10 +186,10 @@ function increaseBoredomBar() {
         document.getElementById("sleepiness-bar").classList.add("hidden");
         document.getElementById("boredom-bar").classList.add("hidden");
         document.getElementById("action-buttons").style.display = "none";
-        document.getElementById("start-button").style.display = "block";
-        document.getElementById("instruction-button").style.display = "block";
+        document.getElementById("start-button").style.display = "hidden";
+        document.getElementById("instruction-button").style.display = "hidden";
         tamagotchi = null;
         
             alert("Your Tamagotchi has passed away.");
+            document.getElementById("dead").style.display = "block";
         }
-
