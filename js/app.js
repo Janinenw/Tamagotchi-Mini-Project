@@ -195,11 +195,7 @@ function increaseBoredomBar() {
         document.getElementById("start-button").style.display = "hidden";
         document.getElementById("instruction-button").style.display = "hidden";
         tamagotchi = null;
-        document.getElementById("tamagotchi-image").classList.add("stop-animation");
-        document.getElementById("tamagotchi-image-two").classList.add("stop-animation");
-        document.getElementById("tamagotchi-image-three").classList.add("stop-animation");
-        document.getElementById("tamagotchi-image-four").classList.add("stop-animation");
-            alert("Your Tamagotchi has passed away.");
+            alert("Your Tamagotchi has passed away.  There's no one to blame but yourself");
             document.getElementById("dead").style.display = "block";
         }
     
