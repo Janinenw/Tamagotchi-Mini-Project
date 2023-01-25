@@ -144,5 +144,9 @@ function increaseBoredomBar() {
         document.getElementById("start-button").style.display = "block";
         document.getElementById("instruction-button").style.display = "block";
         tamagotchi = null;
+        
             alert("Your Tamagotchi has passed away.");
         }
+
+
+        Adding for test commmit to new name 
